@@ -1,0 +1,234 @@
+.flowplayer {
+  background-color: #555;
+
+  #flowplayer-next-video {
+    width: 100%;
+    height: 100%;
+    .content {
+      position: absolute;
+      right: 0;
+      top: 60%;
+      padding: 0;
+      z-index: 1;
+      .title {
+        position: absolute;
+        font-size: 15px;
+        font-weight: bold;
+        padding: 5px;
+        width: 100%;
+        background: linear-gradient(rgba(0, 0, 0, 0.58) 0%, rgba(0, 0, 0, 0) 60%);
+
+        span {
+          color: #FF9800;
+        }
+      }
+      .play-next-movie-button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        svg {
+          width: 100%;
+          transition: all 300ms ease-out;
+          &:hover {
+            width: 75px !important;
+            cursor: pointer;
+            path:nth-child(2) {
+              fill: #2196F3;
+            }
+          }
+        }
+      }
+    }
+
+    .hide-play-next-movie,
+    .hide-play-next-episode {
+      display: none;
+    }
+
+  }
+
+  #flowplayer-report-button {
+    .icon-report {
+      display: block;
+      text-indent: -9999px;
+      width: 20px;
+      height: 20px;
+      background: url('../../img/player-report.svg');
+      background-size: 20px 20px;
+      position: absolute;
+      top: 22px;
+      right: 60px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+#flowplayer-back-button {
+  .icon-back {
+      display: block;
+      text-indent: -9999px;
+      width: 45px;
+      height: 45px;
+      background: url('../../img/flowplayer-back.svg');
+      background-size: 45px 45px;
+      position: absolute;
+      top: 22px;
+      left: 30px;
+      &:hover {
+        cursor: pointer;
+      }
+  }
+}
+
+  /* PLAYLIST */
+
+  #flowplayer-playlist-button {
+
+    .playlist-icon {
+      display: block;
+      text-indent: -9999px;
+      width: 20px;
+      height: 20px;
+      background: url('../../img/flowplayer-playlist.svg');
+      background-size: 20px 20px;
+      position: absolute;
+      top: 22px;
+      right: 100px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  #flowplayer-playlist.show {
+    position: absolute;
+    right: 0 !important;
+
+  }
+
+  #flowplayer-playlist {
+    position: absolute;
+    right: -500px;
+    top: 0;
+    padding: 0;
+    height: 100%;
+    overflow: auto;
+    background: #1f212f;
+    transition: 500ms;
+
+    .playlist-content {
+      position: relative;
+      top: 60px;
+
+      .season-list {
+        text-align: left;
+
+        .season-toggle-btn {
+          background: transparent;
+          border-bottom: 1px solid #9c9c9c;
+          border-top: none;
+          border-left: none;
+          border-right: none;
+          color: #9c9c9c;
+          margin: 5px;
+          border-radius: 5px;
+          padding: 1px 8px;
+          font-weight: bold;
+
+          &:hover {
+            border-bottom: 1px solid #FF5722;
+            color: #fff;
+          }
+        &:focus {
+          outline: none;
+        }
+        }
+        .season-toggle-btn.active {
+          border-bottom: 1px solid #FF5722;
+          color: #fff;
+          outline: none;
+        }
+      }
+
+      .episode-list {
+
+        .image {
+          position: relative;
+
+          .ovarlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            right: 0;
+            background-image: linear-gradient(60deg, rgb(41, 50, 60) 0%, rgba(72, 85, 99, 0.58) 100%);
+
+            .play {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              h3 {
+                font-weight: bold;
+                font-size: 35px;
+                color: #F44336;
+                display: inline-table;
+              }
+            }
+            .number {
+              position: absolute;
+              top: 0;
+              left: 0;
+              font-size: 30px;
+              font-weight: bold;
+              padding: 10px;
+              padding-top: 3px;
+            }
+          }
+        }
+      }
+
+      .overview {
+        position: relative;
+        padding: 10px;
+        hr {
+          position: absolute;
+          top: 14px;
+          left: -34px;
+          width: 80px;
+          border: 1px solid #FF5722;
+        }
+        p {
+          color: #dadada;
+          font-size: 14px;
+          margin-top: 15px;
+        }
+      }
+
+      li {
+        list-style: none;
+        text-align: left;
+      }
+    }
+  }
+
+  /* Flowplay Default Style */
+
+  .fp-header {
+    z-index: 2;
+  }
+
+}
+
+.flowplayer,
+.flowplayer-player {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+
